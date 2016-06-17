@@ -51,7 +51,7 @@ class Daemon
             default:
                 fseek($lock, 0);
                 ftruncate($lock, 0);
-                fwrite($lock ,$pid);
+                fwrite($lock, $pid);
                 fflush($lock);
                 return;
         }
