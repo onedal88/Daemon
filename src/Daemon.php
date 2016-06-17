@@ -149,7 +149,9 @@ class Daemon
         $pid = fgets($lock);
 
         if (posix_kill($pid, $signal)) {
-            if ($delete) unlink($file);
+            if ($delete) {
+                unlink($file);
+            }
             return true;
         } else {
             return false;
