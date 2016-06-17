@@ -1,7 +1,10 @@
 {
     "name": "onedal/daemon",
     "description": "Lightweight utility and helper classes for CLI applications",
-    "keywords": ["cli", "daemon"],
+    "keywords": [
+        "cli",
+        "daemon"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -20,6 +23,8 @@
         "php": ">=5.4"
     },
     "autoload": {
-        "psr-4": {"oNeDaL\\Daemon\\": "src/"}
+        "psr-4": {
+            "oNeDaL\\Daemon\\": "src/"
+        }
     }
 }
