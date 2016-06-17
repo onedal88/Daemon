@@ -3,6 +3,9 @@
 Daemonize class provides helpers for starting and killing daemonized processes.
 
 > Disclaimer: This package is forked version of [this](https://github.com/nramenta/clio).
+> Main goal of this fork/rewrite is provide a package responsible only for one thing.
+> If you are looking for console inputs, colors etc, see [CLIMate](http://climate.thephpleague.com/)
+> or Symfony console. 
 
 ## Installation
 
