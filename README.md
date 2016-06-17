@@ -2,6 +2,8 @@
 
 Daemonize class provides helpers for starting and killing daemonized processes.
 
+> Disclaimer: This package is forked version of [this](https://github.com/nramenta/clio).
+
 ## Installation
 
 The prefered way to install Clio is through [composer][Composer]; the minimum
@@ -103,7 +105,7 @@ blog post on [daemonizing a PHP CLI script on a POSIX system][post].
 ## Credits 
 
 - Nofriandi Ramenta <nramenta@gmail.com>: autor of original source code (you 
-    can found it [here][clio]
+    can found it [here][clio])
 
 [Composer]: http://getcomposer.org/
 [MIT]: http://en.wikipedia.org/wiki/MIT_License
