@@ -1,16 +1,17 @@
 <?php
 
-namespace Clio;
+namespace oNeDaL;
+
 
 class Daemon
 {
     /**
-     * Daemonize a Closure object.
+     * Daemonize a callback
      *
      * @throws \Exception
      *
-     * @param array $options    Set of options
-     * @param callable $callable Closure object to daemonize
+     * @param array $options Set of options
+     * @param callable $callable Callback to daemonize
      *
      * @return bool True on success, throws an Exception otherwise
      */
@@ -144,7 +145,7 @@ class Daemon
         }
 
         $pid = fgets($lock);
-         
+
         if (posix_kill($pid, SIGTERM)) {
             if ($delete) unlink($file);
             return true;
@@ -152,5 +153,5 @@ class Daemon
             return false;
         }
     }
-}
 
+}
