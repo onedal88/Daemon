@@ -1,6 +1,6 @@
 # Daemon
 
-Daemonize class provides helpers for starting and killing daemonized processes.
+Daemon class provides helpers for starting and killing daemonized processes.
 
 > Disclaimer: This package is forked version of [this](https://github.com/nramenta/clio).
 > Main goal of this fork/rewrite is provide a package responsible only for one thing.
@@ -15,7 +15,7 @@ composer.json configuration is:
 ```
 {
     "require": {
-        "onedal/daemonize": "dev-master"
+        "onedal/daemon": "dev-master"
     }
 }
 ```
