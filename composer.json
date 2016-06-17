@@ -1,5 +1,5 @@
 {
-    "name": "oNeDaL/Daemon",
+    "name": "onedal/daemon",
     "description": "Lightweight utility and helper classes for CLI applications",
     "keywords": ["cli", "daemon"],
     "type": "library",

@@ -1,4 +1,4 @@
-# Daemonize
+# Daemon
 
 Daemonize class provides helpers for starting and killing daemonized processes.
 
@@ -27,7 +27,7 @@ Tests if a daemon is currently running or not. Returns true or false:
 
 ```php
 <?php
-use oNeDaL\Daemonize;
+use oNeDaL\Daemon;
 if (Daemon::isRunning('/path/to/process.pid')) {
     echo "daemon is running.\n";
 } else {
@@ -37,12 +37,12 @@ if (Daemon::isRunning('/path/to/process.pid')) {
 
 ### Daemon::work(array $options, callable $callable)
 
-Daemonize a `$callable` callable object. The `$options` key-value array must
+Daemon a `$callable` callable object. The `$options` key-value array must
 contain `pid` as the path to the PID file:
 
 ```php
 <?php
-use Clio\Daemon;
+use oNeDaL\Daemon;
 if (Daemon::isRunning('/path/to/process.pid')) {
     echo "daemon is already running.\n";
 } else {
@@ -73,7 +73,7 @@ Kill a daemonized process:
 
 ```php
 <?php
-use Clio\Daemon;
+use oNeDaL\Daemon;
 
 if (Daemon::isRunning('/path/to/process.pid')) {
     echo "killing running daemon ...\n";
@@ -98,14 +98,15 @@ blog post on [daemonizing a PHP CLI script on a POSIX system][post].
 
 ## License
 
-http://www.wtfpl.net/
+[MIT]
 
 ## Credits 
 
 - Nofriandi Ramenta <nramenta@gmail.com>: autor of original source code (you 
-    can found it [here](https://github.com/nramenta/clio))
+    can found it [here][clio]
 
 [Composer]: http://getcomposer.org/
 [MIT]: http://en.wikipedia.org/wiki/MIT_License
 [post]: http://andytson.com/blog/2010/05/daemonising-a-php-cli-script-on-a-posix-system/
+[clio]: https://github.com/nramenta/clio
 
