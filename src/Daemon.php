@@ -17,13 +17,6 @@ class Daemon
      */
     public static function work(array $options, callable $callable)
     {
-        if (!extension_loaded('pcntl')) {
-            throw new \Exception('pcntl extension required');
-        }
-
-        if (!extension_loaded('posix')) {
-            throw new \Exception('posix extension required');
-        }
 
         if (!isset($options['pid'])) {
             throw new \Exception('pid not specified');
@@ -95,10 +88,6 @@ class Daemon
      */
     public static function isRunning($file)
     {
-        if (!extension_loaded('posix')) {
-            throw new \Exception('posix extension required');
-        }
-
         if (!is_readable($file)) {
             return false;
         }
@@ -129,10 +118,6 @@ class Daemon
      */
     public static function kill($file, $delete = false, $signal = SIGTERM)
     {
-        if (!extension_loaded('posix')) {
-            throw new \Exception('posix extension required');
-        }
-
         if (!is_readable($file)) {
             throw new \Exception('unreadable pid file ' . $file);
         }

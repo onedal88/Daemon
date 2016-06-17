@@ -9,7 +9,7 @@ Daemon class provides helpers for starting and killing daemonized processes.
 
 ## Installation
 
-The prefered way to install Clio is through [composer][Composer]; the minimum
+The prefered way to install Daemon is through [composer][Composer]; the minimum
 composer.json configuration is:
 
 ```
