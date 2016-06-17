@@ -44,16 +44,16 @@ class Daemon
         }
 
         switch ($pid = pcntl_fork()) {
-        case -1:
-            throw new \Exception('unable to fork');
-        case 0:
-            break;
-        default:
-            fseek($lock, 0);
-            ftruncate($lock, 0);
-            fwrite($lock ,$pid);
-            fflush($lock);
-            return;
+            case -1:
+                throw new \Exception('unable to fork');
+            case 0:
+                break;
+            default:
+                fseek($lock, 0);
+                ftruncate($lock, 0);
+                fwrite($lock ,$pid);
+                fflush($lock);
+                return;
         }
 
         if (posix_setsid() === -1) {
@@ -122,10 +122,12 @@ class Daemon
      *
      * @param string $file   Daemon PID file
      * @param bool   $delete Flag to delete PID file after killing
+     * @param integer $signal Signal
      *
-     * @return bool True on success, false otherwise
+     * @link http://php.net/manual/en/pcntl.constants.php PCNTL signals
+     * @return bool TRUE on success, FALSE otherwise
      */
-    public static function kill($file, $delete = false)
+    public static function kill($file, $delete = false, $signal = SIGTERM)
     {
         if (!extension_loaded('posix')) {
             throw new \Exception('posix extension required');
@@ -146,7 +148,7 @@ class Daemon
 
         $pid = fgets($lock);
 
-        if (posix_kill($pid, SIGTERM)) {
+        if (posix_kill($pid, $signal)) {
             if ($delete) unlink($file);
             return true;
         } else {
